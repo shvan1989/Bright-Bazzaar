@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🛍️ ببە بە فرۆشیار - بازاڕ</title>
+
+  <!-- گرێدان بە فایلی ستایل گشتی -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* دیزاینی گشتی بۆ ئەم پەڕەیە */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      direction: rtl; /* دابینکردنی شێوازی ڕاست بە چەپ */
+      color: #333;
+    }
+
+    /* ناوەڕۆکی سەرەکی */
+    .vendor-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .vendor-container h1 {
+      font-size: 28px;
+      color: #222;
+      margin-bottom: 25px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .vendor-container p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .info-box {
+      background-color: #fffbe6;
+      padding: 20px;
+      border: 1px solid #ffe58f;
+      border-radius: 10px;
+      margin-top: 20px;
+      color: #444;
+      font-weight: 600;
+    }
+
+    /* دوگمە */
+    .vendor-btn {
+      display: block;
+      width: 280px;
+      margin: 30px auto;
+      background-color: #ffcc00;
+      color: #000;
+      padding: 12px 24px;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 3px 8px rgba(255,204,0,0.6);
+    }
+    .vendor-btn:hover {
+      background-color: #e6b800;
+    }
+
+    /* پەپۆپ سکرین */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      right: 0; left: 0; top: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background: #fff;
+      max-width: 480px;
+      margin: 50px auto;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      font-family: 'Poppins', sans-serif;
+      direction: rtl;
+      color: #222;
+    }
+    .close {
+      font-size: 28px;
+      float: left;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: -10px;
+    }
+
+    /* فۆرم */
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+      color: #222;
+    }
+    input[type=text], input[type=email], input[type=tel], input[type=url], select {
+      width: 100%;
+      padding: 8px 10px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 14px;
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* دکمه‌ی فۆرم */
+    .modal-content .vendor-btn {
+      width: 100%;
+      padding: 14px 0;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: none;
+    }
+
+    /* فووتر */
+    footer.footer {
+      background-color: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 14px;
+      margin-top: 60px;
+      font-family: 'Poppins', sans-serif;
+      direction: rtl;
+    }
+    footer.footer p {
+      margin: 6px 0;
+      line-height: 1.4;
+    }
+    footer.footer strong {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <!-- ناوبەری سەرەکی -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo"> بازاڕ - خوازرترین بازاڕی ئۆنلاین </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">ماڵەوە</a></li>
+          <li><a href="products.html">بەرهەمەکان</a></li>
+          <li><a href="about.html">دەربارە</a></li>
+          <li><a href="contact.html">پەیوەندی</a></li>
+          <li><a href="reclam.html">ڕیکلام</a></li>
+          <li><a href="cart.html">🛒 سەبەتە</a></li>
+          <li><a href="seller.html">هەژماری فرۆشیار</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</body>
+<body>
+  <!-- ناوەڕۆکی سەرەکی بۆ داواکاری فرۆشیار -->
+  <div class="vendor-container">
+    <h1>🛍️ دەتەوێت ببیتە فرۆشیار؟</h1>
+    <p>ئەگەر دەتەوێ بەرهەمەکانت بفرۆشی لەسەر ماڵپەڕی بازاڕ، ئێستا داواکاری تۆمارکردن بۆ فرۆشیار بڵێ.</p>
+
+    <div class="info-box">
+      <p>✅ بازاڕ ڕێگات پێدەدات بە فرۆشتن بەئاسانترین شێوە بەڕێوە ببەیت.</p>
+      <p>🚚 بەرهەمەکانت دەگوازرێن بە شێوەیەکی ئەرکدار بۆ کڕیارەکان.</p>
+      <p>📊 پەڕەی تایبەتی بەڕێوەبردنی فرۆشتنەکانت دەبێت.</p>
+    </div>
+
+    <!-- دوگمەی ڕادەستکردنی پەپۆپ -->
+    <button id="openVendorBtn" class="vendor-btn">📝 داواکاری تۆمارکردن بۆ فرۆشیار</button>
+  </div>
+
+  <!-- پەپۆپ سکرین -->
+  <div id="vendorModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+    <div class="modal-content" role="document">
+      <span class="close" id="closeVendor" aria-label="داخستن">&times;</span>
+      <h2 id="modalTitle">داواکاری بوون بە فرۆشیار</h2>
+
+        <label for="company">کۆمپانیا</label>
+        <input type="text" id="company" name="company" required />
+
+        <label for="first_name">ناوی یەکەم</label>
+        <input type="text" id="first_name" name="first_name" required />
+
+        <label for="last_name">ناوی کۆتایی</label>
+        <input type="text" id="last_name" name="last_name" required />
+
+        <label for="email">ئیمەیڵ</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="username">پێناسە</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="country">وڵات</label>
+        <select id="country" name="country" required>
+          <option value="Iraq" selected>عێراق</option>
+          <option value="Iran">ئێران</option>
+          <option value="Turkey">تورکیا</option>
+          <option value="Syria">سۆریا</option>
+          <option value="Jordan">ئوردن</option>
+          <option value="Lebanon">لەبنان</option>
+          <!-- زیاد بکە وڵاتەکان ئەگەر پێویست بوو -->
+        </select>
+
+         <label for="country">پارێزگا</label>
+        <select id="country" name="country" required>
+          <option value="Erbil">هەولێر</option>
+          <option value="Sulaymaniyah">سلێمانی</option>
+          <option value="Duhok">دهۆک</option>
+          <option value="Kirkuk">کەرکووک</option>
+          <option value="Baghdad">بەغدا</option>
+          <option value="Basra">بەصرا</option>
+          <option value="Najaf">نجف</option>
+          <option value="Karbala">کربلا</option>
+          <option value="Diyala">دیالی</option>
+          <option value="Wasit">واستی</option>
+          <option value="Maysan">میسان</option>
+          <option value="Thi-Qar">ثیقار</option>
+          <option value="Babylon">بابڵ</option>
+          <option value="Anbar">ئەنبەر</option>
+          <option value="Nineveh">نێنەوا</option>
+          <option value="Salahaddin">صلاح الدین</option>
+          <option value="Dhi Qar">ذی قار</option>
+
+          <!-- زیاد بکە پارێزگا ئەگەر پێویست بوو -->
+        </select>
+
+        <label for="address">ناونیشان</label>
+        <input type="text" id="address" name="address" required />
+
+        <label for="mobile">ژمارەی مۆبایل +964</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{7,10}" placeholder="7xxxxxxx" required />
+
+        <label for="website">ناونیشانی لاپەڕە (URL)</label>
+        <input type="url" id="website" name="website" placeholder="https://example.com" />
+
+        <label><input type="checkbox" name="agree_terms" required /> ڕازیم بە مەرج و ڕێساکان</label>
+        <br /><br />
+        <label><input type="checkbox" name="privacy_consent" required /> من ڕازیم کە زانیارییە کەسییەکانم بەم شێوەیەی خوارەوە پرۆسێس بکرێن.</label>
+        <br /><br />
+
+        <!-- هەروەها زیادکردنی Anti-bot validation لە لایەن سیستەمەکەت -->
+        <button type="submit" class="vendor-btn">پێشکەشکردن</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="sell-steps-grid">
+  <!-- Step 1 -->
+  <div class="sell-step">
+    <h3>1️⃣ تۆمارکردن</h3>
+    <p>ئەکاونتێک دروست بکە و زانیارییە بنەڕەتییەکان بنێرە (ناو، ژمارەی تەلەفۆن، ئیمەیڵ...).</p>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="sell-step">
+    <h3>2️⃣ پشتڕاستکردن</h3>
+    <p>تیمی بازاڕ زانیاریەکانت پشتڕاست دەکات و لینکێک دەنێرێت بۆ داخڵبوون.</p>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="sell-step">
+    <h3>3️⃣ بەکارهێنانی پۆرتاڵ</h3>
+    <p>بابەتەکان زیاد بکە، نرخ بنووسە، وێنە بار بکە، و لیستە دروست بکە بۆ بەرهەمەکانت.</p>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="sell-step">
+    <h3>4️⃣ گەیاندن و فەرموودنەکان</h3>
+    <p>کالاکە بە ئامادەبونی و ناردن بگەیەنە بازاڕ بۆ گەیاندن بە کڕیار.</p>
+  </div>
+
+  <!-- Step 5 -->
+  <div class="sell-step">
+    <h3>5️⃣ ڕاپۆرت و ژمێریاری</h3>
+    <p>فەرموودنەکان ببینە، ڕاپۆرتەکان و باڵانسەکان بە تەواوی بەڕێوەببە.</p>
+  </div>
+</div>
+
+
+  
+  <!-- فووتر - وەک پەڕەکانی تر -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 بازاڕ. هەموو مافەکان پارێزراون.</p>
+      <p>ئیمەیل: shvan.shahab@gmail.com | تەلەفۆن: 07701180199</p>
+      <p>ماڵپەڕ بەڕێوە دەبریت لەلایەن گروپی بازاڕ بۆ پەیوەندی باشتر و بەهێزکردنی بازاڕی کوردستان.</p>
+    </div>
+  </footer>
+
+  <!-- جاڤاسکریپت بۆ کۆنترۆڵی پەپۆپ -->
+  <script>
+    const modal = document.getElementById('vendorModal');
+    const openBtn = document.getElementById('openVendorBtn');
+    const closeBtn = document.getElementById('closeVendor');
+
+    // کرتە لە دوگمەی داواکاری فرۆشیار بۆ کردنەوەی پەپۆپ
+    openBtn.onclick = () => {
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+    };
+
+    // کرتە لە دوگمەی داخستن بۆ داخستنی پەپۆپ
+    closeBtn.onclick = () => {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+    };
+
+    // داخستنی پەپۆپ کاتێک کلیک دەکرێت لە دەرەوەی ناو پەپۆپ
+    window.onclick = (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    };
+
+    // (هەروەها دەتوانیت ئەم جاڤاسکریپتە زیاد بکەیت بۆ چاککردنی فۆرم یان validation)
+  </script>
+
+</body>
+</html>

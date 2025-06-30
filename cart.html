@@ -1,0 +1,199 @@
+<!-- 📄 cart.html - پەڕەی سەبەتەی کڕین -->
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بازاڕ - سەبەتەی کڕین</title>
+  <link rel="stylesheet" href="style.css"> <!-- گرێدان بە ستایلی گشتی -->
+</head>
+<body>
+  <!-- 🔼 ناوبەری سەرەوە -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo"> بازاڕ - خوازرترین بازاڕی ئۆنلاین </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ماڵەوە</a></li>
+          <li><a href="products.html">بەرهەمەکان</a></li>
+          <li><a href="about.html">دەربارە</a></li>
+          <li><a href="contact.html">پەیوەندی</a></li>
+          <li><a href="cart.html" class="active">🛒 سەبەتە</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🛒 لیستی بەرهەمەکانی سەبەتە -->
+  <section class="cart-section">
+    <div class="container">
+      <h2>سەبەتەی کڕین</h2>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>وێنە</th>
+            <th>ناوی بەرهەم</th>
+            <th>نرخ</th>
+            <th>ژمارە</th>
+            <th>ڕەشکردن</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- 🔁 ئەم شوێنە بە داینامیکی پڕ دەکرێتەوە لەلایەن cart.js -->
+        </tbody>
+      </table>
+      
+      <!-- 💵 کۆی گشتی -->
+      <div class="cart-summary">
+        <p>کۆی گشتی: <span id="cart-total">0 دینار</span></p>
+        <button id="checkout-btn">دوامدانەوەی کڕین</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💳 فۆڕمی پارەدان - پەپۆپ -->
+<div id="checkout-popup" class="checkout-modal hidden">
+  <div class="checkout-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h3 style="color:#ffcc00;">💳 زانیاری پارەدان</h3>
+    <p>کۆی گشتی: <strong id="final-total">0 دینار</strong></p>
+    <p>پارەکەت لە ڕێگەی چی دەدەیت؟</p>
+    <label><input type="radio" name="payment-method" value="card" checked> 💳 کارتی بانکی</label><br>
+    <label><input type="radio" name="payment-method" value="cash"> 💵 پارەی کاش</label><br><br>
+    <label>ژمارەی کارتەکەت:</label><br>
+    <input type="text" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="19"><br><br>
+    <button onclick="confirmOrder()">✅ دڵنیام، داواکاریەکەم بنێرە</button>
+  </div>
+</div>
+
+<style>
+  /* ستایل بۆ پەپۆپ پارەدان */
+  .checkout-modal {
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .checkout-modal.hidden {
+    display: none;
+  }
+  .checkout-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    direction: rtl;
+    text-align: right;
+  }
+  .close-btn {
+    float: left;
+    font-size: 24px;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  // نیشاندانی پەپۆپ لەکاتی کلیک لە دوگمەی کڕین
+  document.getElementById("checkout-btn").addEventListener("click", function() {
+    document.getElementById("checkout-popup").classList.remove("hidden");
+    // نرخە کۆی گشتی پێشکەش دەکرێت
+    const total = document.getElementById("cart-total").innerText;
+    document.getElementById("final-total").innerText = total;
+  });
+
+  // داخستنی پەپۆپ بە دوگمەی ×
+  function closePopup() {
+    document.getElementById("checkout-popup").classList.add("hidden");
+  }
+
+  // دڵنیای داواکاری
+  function confirmOrder() {
+    alert("✅ داواکاریەکەت بە سەرکەوتوویی نێردرا! بە زووتر پێت ئەگات.");
+    closePopup();
+  }
+</script>
+
+<!-- 🧾 ناوەڕۆک -->
+<section class="content-section">
+  <div class="container">
+    <h2>🏷️ پارەدان و گواستنەوە</h2>
+
+    <!-- ✅ کۆنتەینەری تەنیشتی هەموو info-block ـەکان -->
+    <div class="info-grid">
+      
+      <!-- 💳 پارەدان -->
+      <div class="info-block">
+        <img src="assets/icons/payment.jpg" alt="Payment Options" class="info-icon">
+        <div class="info-text">
+          <h3>💳 ڕێگاکانی پارەدان</h3>
+          <ul>
+            <li>کارتی بانکی (POS یان پارەدانی ئەلیکترۆنی)</li>
+            <li>پارەی کاش لە کاتی گواستنەوە</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 🚚 گواستنەوە -->
+      <div class="info-block">
+        <img src="assets/icons/delivery.png" alt="Delivery" class="info-icon">
+        <div class="info-text">
+          <h3>🚚 گواستنەوە</h3>
+          <ul>
+            <li>گواستنەوەی بەرهەمەکان لە نێوان 24 تا 72 کاتژمێرەدا</li>
+            <li>فراوانی بەردەستبوونی گواستنەوە لە هەموو شارە سەرەکییەکانی هەرێم</li>
+            <li>نرخی گواستنەوە بەپێی مسافە و جۆری بەرهەم</li>
+          </ul>
+        </div>
+      </div>
+
+<!-- 🚚 شێوازەکانی گەیاندن -->
+      <div class="info-block">
+        <img src="assets/icons/delivery-method.png" alt="Important Notes" class="info-icon">
+        <div class="info-text">
+          <h3>شێوازەکانی گەیاندن</h3>
+          <ul>
+   <li><strong>Courier Delivery:</strong> هەروەها دەتوانیت داواکارییەکەت لە ماڵەوە وەربگریت بە گەیاندنێکی بەشداربوو.</li>
+      <li><strong>Pickup Center:</strong> دەتوانیت هەروەها داواکاریەکەت خۆت بچیت و لە ناوەندەکانی خزمەتگوزارییەکە وەربگریت.</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- ❗ تێبینی -->
+      <div class="info-block">
+        <img src="assets/icons/warning.png" alt="Important Notes" class="info-icon">
+        <div class="info-text">
+          <h3>❗ تێبینییە گرنگەکان</h3>
+          <ul>
+            <li>تکایە زانیاریەکان و ژمارەی موبایل بە دروستی بنوسە</li>
+            <li>پارەدان لە ماڵەوە بە کاش یان کارتەوە بەردەستە</li>
+            <li>هەموو بەرهەمەکان بە پەڕەسەندنی گونجاو نێردراو دەبن</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- بەشی کۆتایی - فووتر -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 بازاڕ. هەموو مافەکان پارێزراون.</p>
+      <p>ئیمەیل: shvan.shahab@gmail.com | تەلەفۆن: 07701180199</p>
+      <p>
+        ماڵپەڕ بەڕێوە دەبریت لەلایەن <strong>گروپی بازاڕ</strong> بۆ پەیوەندی باشتر و بەهێزکردنی بازاڕی کوردستان.
+      </p>
+    </div>
+  </footer>
+  
+  <!-- 🔗 گرێدان بە فایلەکانی جاڤاسکریپت -->
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>

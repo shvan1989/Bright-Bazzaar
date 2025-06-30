@@ -1,0 +1,266 @@
+<!-- 📄 products.html - پەڕەی بەرهەمەکان -->
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بازاڕ - بەرهەمەکان</title>
+  <link rel="stylesheet" href="style.css"> <!-- پەیوەندیکردن بە ستایلی گشتی -->
+</head>
+<body>
+  <!-- 🔼 ناوبەری سەرەوە -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo"> بازاڕ - خوازرترین بازاڕی ئۆنلاین </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ماڵەوە</a></li>
+          <li><a href="products.html" class="active">بەرهەمەکان</a></li>
+          <li><a href="about.html">دەربارە</a></li>
+          <li><a href="contact.html">پەیوەندی</a></li>
+          <li><a href="cart.html">🛒 سەبەتە</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🛍 لیستی هەموو بەرهەمەکان -->
+  <section class="product-list">
+    <div class="container">
+      <h2>هەموو بەرهەمەکان</h2>
+      
+   <!-- بەشی فلتەر و گەڕان -->
+  <section class="search-filters container">
+      <input type="text" id="searchInput" placeholder="گەڕان بە ناوی بەرهەم..." />
+    </div>
+  </section>
+
+      <!-- ✅ کارتەکانی بەرهەم -->
+  <section class="products container" id="productsContainer">
+    <!-- کارت بەرهەمەکان -->
+
+<!-- کارت بەرهەمەکان -->
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product1.webp" alt="ئایفۆن" />
+  <h4>ئایفۆن 16 پرۆ ماکس</h4>
+  <p>1,600,000 دینار</p>
+  <button onclick="addToCart({id:'p5', name:'ئایفۆن', price:25000, image:'assets/img/Products/product1.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product24.webp" alt="ئایفۆن" />
+  <h4>ئایفۆن 16</h4>
+  <p>1,045,000 دینار</p>
+  <button onclick="addToCart({id:'p27', name:'ئایفۆن', price:25000, image:'assets/img/Products/product24.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product2.webp" alt="کاتژمێر" />
+  <h4>کاتژمێری زیرەک</h4>
+  <p>950,000 دینار</p>
+  <button onclick="addToCart({id:'p6', name:'کاتژمێر', price:25000, image:'assets/img/Products/product2.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product3.webp" alt="پلەی" />
+  <h4>پلەی ستەیشن</h4>
+  <p>950,000 دینار</p>
+  <button onclick="addToCart({id:'p7', name:'پلەی ستەیشن', price:25000, image:'assets/img/Products/product3.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<!-- 🏠 بەشی ماڵ -->
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product4.webp" alt="کورسی" />
+  <h4> کورسی ئۆفیس </h4>
+  <p>95,000 دینار</p>
+  <button onclick="addToCart({id:'p1', name:'کورسی ئۆفیس', price:25000, image:'assets/img/Products/product4.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product23.webp" alt="قاپشۆڕ " />
+  <h4>قاپشۆڕ بە کۆنتڕۆڵی ئاسان</h4>
+  <p>525,000 دینار</p>
+  <button onclick="addToCart({id:'p26', name:'قاپشۆڕ', price:25000, image:'assets/img/Products/product23.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<!-- ⚡ بەشی ئەلیکترۆنی -->
+<div class="product-card" data-type="electronic" data-location="hawler">
+  <img src="assets/img/Products/product5.webp" alt="ستاندی مۆبایل" />
+  <h4>ستاندی مۆبایل</h4>
+  <p>13,000 دینار</p>
+  <button onclick="addToCart({id:'p8', name:' ستاندی مۆبایل', price:12000, image:'assets/img/Products/product5.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<div class="product-card" data-type="electronic" data-location="hawler">
+  <img src="assets/img/Products/product14.webp" alt="تەلەفزیۆن" />
+  <h4>تەلەفزیۆنی زیرەکی</h4>
+  <p>85,000 دینار</p>
+  <button onclick="addToCart({id:'p17', name:'تەلەفزیۆن', price:12000, image:'assets/img/Products/product14.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<div class="product-card" data-type="electronic" data-location="hawler">
+  <img src="assets/img/Products/product15.webp" alt="تابلێت" />
+  <h4>شاومی پاد 6 ئێس پرۆ</h4>
+  <p>754,000 دینار</p>
+  <button onclick="addToCart({id:'p18', name:'تابلێت', price:12000, image:'assets/img/Products/product15.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+<div class="product-card" data-type="electronic" data-location="hawler">
+  <img src="assets/img/Products/product16.webp" alt="بیرگە" />
+  <h4>بیرگە(ذاکیرەی) دەرەکی</h4>
+  <p>85,000 دینار</p>
+  <button onclick="addToCart({id:'p19', name:'بیرگە', price:12000, image:'assets/img/Products/product16.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<div class="product-card" data-type="electronic" data-location="hawler">
+  <img src="assets/img/Products/product6.webp" alt="لاپتۆپ Apple " />
+  <h4>لاپتۆپ و دیسکتۆپ</h4>
+  <p>940,500 دینار</p>
+  <button onclick="addToCart({id:'p9', name:' لاپتۆپ Apple ', price:12000, image:'assets/img/Products/product6.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+
+<!-- 🎮 بەشی وەرزش و یاری -->
+<div class="product-card" data-type="games" data-location="duhok">
+  <img src="assets/img/Products/product7.webp" alt="چادر" />
+  <h4>چادر و ئیکسسوارات</h4>
+  <p>35,000 دینار</p>
+  <button onclick="addToCart({id:'p10', name:'چادر', price:720000, image:'assets/img/Products/product7.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<!-- 🧴 بەشی جوانی و تەندروستی -->
+<div class="product-card" data-type="beauty" data-location="halabja">
+  <img src="assets/img/Products/product8.webp" alt="کرێم" />
+  <h4>کرێمی دەمووچاو </h4>
+  <p>6,750 دینار</p>
+  <button onclick="addToCart({id:'p11', name:'کرێم', price:18000, image:'assets/img/Products/product8.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<!-- 💊 بەشی دەرمانخانە -->
+<div class="product-card" data-type="pharmacy" data-location="kirkuk">
+  <img src="assets/img/Products/product9.webp" alt="ڤیتامین" />
+  <h4>ڤیتامینەکان</h4>
+  <p>15,000 دینار</p>
+  <button onclick="addToCart({id:'p12', name:'ڤیتامین', price:65000, image:'assets/img/Products/product9.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<div class="product-card" data-type="pharmacy" data-location="kirkuk">
+  <img src="assets/img/Products/product17.webp" alt="کرێمی ئازار " />
+  <h4>کرێمی ئازار 40مل-Roza Mouv</h4>
+  <p>3,000 دینار</p>
+  <button onclick="addToCart({id:'p20', name:'کرێمی ئازار ', price:65000, image:'assets/img/Products/product17.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<!-- 🐕 پێداویستی گیانداری ماڵی -->
+<div class="product-card" data-type="pets" data-location="halabja">
+  <img src="assets/img/Products/product10.webp" alt="خواردنی سگ" />
+  <h4>خواردنی سگ</h4>
+  <p>40,000 دینار</p>
+  <button onclick="addToCart({id:'p13', name:'خواردنی سگ', price:35000, image:'assets/img/Products/product10.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<div class="product-card" data-type="pets" data-location="halabja">
+  <img src="assets/img/Products/product18.webp" alt="خواردنی پشیلە" />
+  <h4>خواردنی پشیلە</h4>
+  <p>1,000 دینار</p>
+  <button onclick="addToCart({id:'p21', name:'خواردنی پشیلە', price:35000, image:'assets/img/Products/product18.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<!-- 📦 حەوشە و باخچە -->
+<div class="product-card" data-type="pets" data-location="halabja">
+  <img src="assets/img/Products/product11.webp" alt="جۆلانە" />
+  <h4>جۆلانە</h4>
+  <p>11,000 دینار</p>
+  <button onclick="addToCart({id:'p14', name:'جۆلانە', price:35000, image:'assets/img/Products/product11.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+
+<!-- 🛠️ ئامرازەکان و باشترکردنی ماڵ -->
+ <div class="product-card" data-type="pets" data-location="halabja">
+  <img src="assets/img/Products/product12.webp" alt="ئامێرەکانی ماڵە" />
+  <h4>ئامێرەکانی ماڵە</h4>
+  <p>28,000 دینار</p>
+  <button onclick="addToCart({id:'p15', name:'ئامێرەکانی ماڵە', price:35000, image:'assets/img/Products/product12.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+ <div class="product-card" data-type="pets" data-location="halabja">
+  <img src="assets/img/Products/product21.webp" alt="فانۆس" />
+  <h4>فانۆس و گڵۆپی فریاگوزاری</h4>
+  <p>19,000 دینار</p>
+  <button onclick="addToCart({id:'p24', name:'فانۆس', price:35000, image:'assets/img/Products/product21.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+ <div class="product-card" data-type="pets" data-location="halabja">
+  <img src="assets/img/Products/product22.webp" alt="درێڵ" />
+  <h4>شاومی دەڕنەفیزی کارەبایی</h4>
+  <p>43,000 دینار</p>
+  <button onclick="addToCart({id:'p25', name:'درێڵ', price:35000, image:'assets/img/Products/product22.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<!-- 🏠 پێویستی ماڵ -->
+  <div class="product-card" data-type="pets" data-location="halabja">
+  <img src="assets/img/Products/product13.webp" alt="بۆکسی خۆراک" />
+  <h4>بۆکسی خۆراک</h4>
+  <p>2,750 دینار</p>
+  <button onclick="addToCart({id:'p16', name:'بۆکسی خۆراک', price:35000, image:'assets/img/Products/product13.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+  <div class="product-card" data-type="pets" data-location="halabja">
+  <img src="assets/img/Products/product19.webp" alt="تابلۆ" />
+  <h4>تابلۆی لمی بە قەبارەی گەورە</h4>
+  <p>16,000 دینار</p>
+  <button onclick="addToCart({id:'p22', name:'تابلۆ', price:35000, image:'assets/img/Products/product19.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+  <div class="product-card" data-type="pets" data-location="halabja">
+  <img src="assets/img/Products/product20.webp" alt="داستی" />
+  <h4>داستی - پاکكەرەوە و بۆنخۆش</h4>
+  <p>5,250 دینار</p>
+  <button onclick="addToCart({id:'p23', name:'داستی', price:35000, image:'assets/img/Products/product20.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product30.webp" alt="جل و بەرگی خانمان" />
+  <h4>درێسی خانمان</h4>
+  <p>18,000 دینار</p>
+  <button onclick="addToCart({id:'p30', name:'جل و بەرگی خانمان', price:25000, image:'assets/img/Products/product30.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product31.webp" alt="جل و بەرگی خانمان" />
+  <h4>کراسی خانمان</h4>
+  <p>25,000 دینار</p>
+  <button onclick="addToCart({id:'p31', name:'جل و بەرگی خانمان', price:25000, image:'assets/img/Products/product31.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product32.webp" alt="جل و بەرگی خانمان" />
+  <h4>چاکەتی بلەیزەر</h4>
+  <p>27,000 دینار</p>
+  <button onclick="addToCart({id:'p32', name:'جل و بەرگی خانمان', price:25000, image:'assets/img/Products/product32.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+<div class="product-card" data-type="home" data-location="sulaymaniyah">
+  <img src="assets/img/Products/product33.webp" alt="جل و بەرگی خانمان" />
+  <h4>کابۆی پان و کەمەر</h4>
+  <p>24,000 دینار</p>
+  <button onclick="addToCart({id:'p32', name:'جل و بەرگی خانمان', price:25000, image:'assets/img/Products/product33.webp'})">زیادکردن بۆ سەبەتە</button>
+</div>
+
+  </section>
+
+
+  <!-- فووتر -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 بازاڕ. هەموو مافەکان پارێزراون.</p>
+      <p>ئیمەیل: shvan.shahab@gmail.com | تەلەفۆن: 07701180199</p>
+      <p>
+        ماڵپەڕ بەڕێوە دەبریت لەلایەن <strong>گروپی بازاڕ</strong> بۆ پەیوەندی باشتر و بەهێزکردنی بازاڕی کوردستان.
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- 🔗 گرێدان بە سکریپتەکانی جاڤاسکریپت -->
+  <script src="main.js"></script>
+  
+</body>
+</html>

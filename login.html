@@ -1,0 +1,61 @@
+<!-- 📄 login.html - پەڕەی چوونەژوورەوە / تۆماربوون (بە شێوەی popup) -->
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>چوونەژوورەوە / تۆماربوون</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 🧾 popup ی چوونەژوورەوە / تۆماربوون -->
+  <div class="modal login-modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>چوونەژوورەوە</h2>
+      <form action="#" method="post" class="login-form">
+        <input type="email" placeholder="ئیمەیڵ" required>
+        <input type="password" placeholder="وشەی نهێنی" required>
+        <button type="submit">چوونەژوورەوە</button>
+      </form>
+      <p>هەژمارت نییە؟ <a href="#" onclick="showRegister()">تۆماربوون</a></p>
+    </div>
+  </div>
+
+  <!-- 🧾 popup ی تۆماربوون -->
+  <div class="modal register-modal" id="registerModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>تۆماربوون</h2>
+      <form action="#" method="post" class="register-form">
+        <input type="text" placeholder="ناو" required>
+        <input type="email" placeholder="ئیمەیڵ" required>
+        <input type="password" placeholder="وشەی نهێنی" required>
+        <button type="submit">تۆماربوون</button>
+      </form>
+      <p>هەژمارت هەیە؟ <a href="#" onclick="showLogin()">چوونەژوورەوە</a></p>
+    </div>
+  </div>
+
+  <!-- 🔗 سکریپتی popup ها -->
+  <script>
+    function closeModal() {
+      document.getElementById('loginModal').style.display = 'none';
+      document.getElementById('registerModal').style.display = 'none';
+    }
+
+    function showRegister() {
+      document.getElementById('loginModal').style.display = 'none';
+      document.getElementById('registerModal').style.display = 'block';
+    }
+
+    function showLogin() {
+      document.getElementById('registerModal').style.display = 'none';
+      document.getElementById('loginModal').style.display = 'block';
+    }
+
+    // 💡 بۆ نمونەی فەرمی popup لەسەر دەرچوونی پەڕەیەکی تر دەکرێت
+    document.getElementById('loginModal').style.display = 'block';
+  </script>
+</body>
+</html>

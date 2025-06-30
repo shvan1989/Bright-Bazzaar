@@ -1,0 +1,16 @@
+[
+    {
+        "id":1,
+        "name": "Samsung S10 plus",
+        "description": "sdasfs",
+        "image": "/assets/samsung_s10_plus.png",
+        "price": 233
+    },
+    {
+        "id":2,
+        "name": "Samsung S10 plus",
+        "description": "sdasfs",
+        "image": "/assets/samsung_s10_plus.png",
+        "price": 233
+    }
+]

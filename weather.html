@@ -1,0 +1,126 @@
+<!-- 🔘 دوگمەی نیشاندانی کەشوهەوا -->
+<button onclick="openWeatherPopup()" class="open-weather-btn">🌦 نیشاندانی کەشوهەوای کوردستان</button>
+
+<!-- ☁️ پەپۆپ کەشوهەوا -->
+<div class="weather-popup" id="weatherPopup">
+  <div class="weather-popup-content">
+    <span class="close-btn" onclick="closeWeatherPopup()">&times;</span>
+
+    <!-- 🔽 ناوخۆی بەشی کەشوهەوا (کۆدەکەت لێرە دابنێ) -->
+    <!-- 🟢 لێرە کۆدە HTML بەشی weather-section دانراوە -->
+    <!-- ئەوەی خۆت لە پێشتر نووسیوت، دەتوانیت هەمان ناوخۆی `weather-section` لێرە دانێ -->
+
+    <!-- ☁️ بەشی کەشوهەوای کوردستان -->
+    <section class="weather-section">
+      <div class="container">
+        <h2 class="section-title">کەشوهەوای کوردستان</h2>
+        <div class="weather-cards">
+
+          <!-- Card – هەولێر -->
+          <div class="weather-card" id="weather-erbil">
+            <h3>هەولێر</h3>
+            <p class="temp">— °C</p>
+            <p class="desc">چاوەڕوان...</p>
+          </div>
+
+          <!-- Card – سلێمانی -->
+          <div class="weather-card" id="weather-sulaymaniyah">
+            <h3>سلێمانی</h3>
+            <p class="temp">— °C</p>
+            <p class="desc">چاوەڕوان...</p>
+          </div>
+
+          <!-- Card – دهۆک -->
+          <div class="weather-card" id="weather-duhok">
+            <h3>دهۆک</h3>
+            <p class="temp">— °C</p>
+            <p class="desc">چاوەڕوان...</p>
+          </div>
+
+          <!-- Card – کەرکوک -->
+          <div class="weather-card" id="weather-kirkuk">
+            <h3>کەرکوک</h3>
+            <p class="temp">— °C</p>
+            <p class="desc">چاوەڕوان...</p>
+          </div>
+
+        </div>
+
+        <p class="weather-note">
+          🔄 زانیاریەکان بە شێوەیەکی خۆکار نوێدەبنەوە لە API ـی جیهانی. 
+          <a href="https://openweathermap.org/" target="_blank">سەرچاوە: OpenWeather</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<style>
+  /* 🔘 دوگمەی فەرمی */
+.open-weather-btn {
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 🟦 پەپۆپەکە */
+.weather-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* 📦 ناوپۆپ */
+.weather-popup-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ❌ دوگمەی داخستن */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 🎞 ئەنیمەیشن */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+</style>
+
+<script>
+function openWeatherPopup() {
+  document.getElementById("weatherPopup").style.display = "block";
+}
+
+function closeWeatherPopup() {
+  document.getElementById("weatherPopup").style.display = "none";
+}
+</script>
+
+
+

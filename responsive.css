@@ -1,0 +1,74 @@
+/* responsive.css - ستایلی ڕیسپۆنسڤ بۆ مۆبایل و تەبلێت */
+
+/* 🔹 گۆڕانکاری بۆ مۆبایلەکان (بەرزی پەڕە کمتر لە 768px) */
+@media (max-width: 768px) {
+
+  /* کەمکردنەوەی پادینگ و فونتەکان لە هێرۆ */
+  .hero {
+    padding: 50px 10px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* ڕیزبەندی کورتکراوەی فلتەرەکان */
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .filters select,
+  .filters input[type="text"] {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  /* گۆڕانکاری لە کارتەکانی بەرهەم */
+  .product-card {
+    width: 90%;
+    margin: auto;
+  }
+
+  /* گۆڕانکاری ناوبەر */
+  .navbar .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+/* 🔹 گۆڕانکاری بۆ تەبلێتەکان (بەرزی پەڕە کمتر لە 480px) */
+@media (max-width: 480px) {
+
+  /* کەمکردنەوەی فونتەکان لە هێرۆ */
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  /* کارتەکانی بەرهەم بۆ تەواوی پەڕە */
+  .product-card {
+    width: 100%;
+    margin: 0 auto 20px auto;
+  }
+
+  /* ناوبەر بۆ ڕیزبەندی ستوونی */
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
